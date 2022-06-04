@@ -14,7 +14,7 @@ func buildAddr(ip net.IP, port int) string {
 	return fmt.Sprintf("[%s]:%d", ip, port)
 }
 
-func remoteAddr(r *http.Request) string {
+func RemoteAddr(r *http.Request) string {
 	IPAddress := r.Header.Get("X-Real-Ip")
 	if IPAddress == "" {
 		IPAddress = r.Header.Get("X-Forwarded-For")

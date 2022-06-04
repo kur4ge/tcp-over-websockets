@@ -55,5 +55,5 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 		wsConn.WriteMessage(websocket.TextMessage, []byte("Temporary failure in name resolution"))
 		return
 	}
-	Process(remoteAddr(r), wsConn, hostname, ip, port)
+	Process(RemoteAddr(r), wsConn, hostname, ip, port)
 }
