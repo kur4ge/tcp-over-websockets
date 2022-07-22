@@ -8,7 +8,7 @@ import (
 	"github.com/gorilla/websocket"
 )
 
-func wsReader(conn *websocket.Conn, recv chan []byte) {
+func WSReader(conn *websocket.Conn, recv chan []byte) {
 	for {
 		messageType, data, err := conn.ReadMessage()
 		if err != nil {
@@ -27,7 +27,7 @@ func wsReader(conn *websocket.Conn, recv chan []byte) {
 	}
 }
 
-func stdinReader(recv chan []byte) {
+func StdinReader(recv chan []byte) {
 	input := bufio.NewReader(os.Stdin)
 	for {
 		data, err := input.ReadBytes('\n')
